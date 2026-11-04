@@ -1,0 +1,15 @@
+name: "My First Automation Robot"
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Greet Alexis
+      run: echo "Hello Alexis! Your GitHub Actions pipeline is working flawlessly."
+
+    - name: Check the Server Date and Time
+      run: date
