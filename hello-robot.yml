@@ -1,0 +1,24 @@
+<< 'EOF' > .github/workflows/hello-robot.yml
+name: "My First Automation Robot"
+
+# 1. THE TRIGGER: What causes this to run?
+on:
+  push:
+    branches: [ main ]
+
+# 2. THE RUNNER: Where does the code execute?
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest # Spins up a fresh, isolated Linux machine in GitHub's cloud
+
+    # 3. THE STEPS: What commands should the robot execute?
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4 # Downloads your repo files onto the cloud machine
+
+    - name: Greet Alexis
+      run: echo "Hello Alexis! Your GitHub Actions pipeline is working flawlessly."
+
+    - name: Check the Server Date and Time
+      run: date
+EOF
